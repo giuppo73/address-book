@@ -15,7 +15,7 @@ class AddressBook()
 
   def countEntriesFor(sex: Sex): Int = entries.count(_.sex == sex)
 
-  def oldestEntry: Option[AddressBookEntry] = entries.sortBy(_.ageInDays).headOption
+  def oldestEntry: Option[AddressBookEntry] = entries.sortBy(- _.ageInDays).headOption
 
   def compareAgeInDays(entryName1: String, entryName2: String): Int = {
     val entries = filterByName(entryName1, entryName2)
