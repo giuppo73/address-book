@@ -13,6 +13,8 @@ object Sex {
 
 trait Sex {
   def asString: String
+
+  override def toString: String = asString
 }
 
 case object SexMale extends Sex {
